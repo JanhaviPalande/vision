@@ -42,12 +42,18 @@ var app = {
                         alert('success');
                         console.log(JSON.stringify(data));
                         $.each(data, function (i, theItem) {
-                        	
+                        /*	
                         	//For Manage Seeker
                         	var html = "<tr><td>"+theItem.firstname+" "+theItem.lastname+"</td>	<td>"+theItem.mobile+"</td><td>"+theItem.state+"</td><td>"+theItem.city+"</td></tr>"; 
                         	$("#seeker_list > tbody").append(html);
                         	$("#seeker_list").table("refresh");                        	
+                       */
+                        	//For Manage volunteer
+                        	var html = "<tr><td>"+theItem.firstname+" "+theItem.lastname+"</td>	<td>"+theItem.mobile+"</td><td>"+theItem.state+"</td><td>"+theItem.city+"</td><td>"+theItem.city+"</td></tr>"; 
+                        	$("#volunteer_list > tbody").append(html);
+                        	$("#volunteer_list").table("refresh");                        	
                        
+                        	
                         });
                     },
                     error: function (msg, url, line) {
