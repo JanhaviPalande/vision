@@ -16,7 +16,7 @@
     </head>
 <body style="text-transform: capitalize;">
 		 <div class="app">
-              <form method="post" id="target">
+              <form method="post" id="register_form">
                 
 					<div data-role="page" data-theme="a">
 		
@@ -43,10 +43,10 @@
 		
 		<div style="display: inline-block;">
 			<div style="width:150px; float: left; margin-right: 5px;">
-				<input name="password" id="first_name" required="true" data-clear-btn="true" value="" placeholder="Password*" maxlength="20" type="password"/>
+				<input name="password" id="password" required="true" data-clear-btn="true" value="" placeholder="Password*" maxlength="20" type="password"/>
 			</div>
 			<div style="width:180px; float: right;">
-				<input name="reenter_password" id="last_name" required="true" data-clear-btn="true" value="" placeholder="Retype password*" maxlength="20" type="password"/>
+				<input name="reenter_password" id="reenter_password" required="true" data-clear-btn="true" value="" placeholder="Retype password*" maxlength="20" type="password"/>
 			</div>
 		</div>
 		
@@ -118,7 +118,7 @@
 			</div>
 		</div>
 		
-		
+		</form>
 		
 	</div>
 	<div data-role="navbar" id="login_footer">
@@ -133,5 +133,7 @@
 			</li>
 		</ul>
 	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
