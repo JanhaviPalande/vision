@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="css/themes/vision_theme.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Antardrishti-Registration</title>
+    </head>
+<body style="text-transform: capitalize;">
+		 <div class="app">
+              <form method="post" id="create_request_form">
+                
+					<div data-role="page" data-theme="a">
+		
+
+	<div id="request" class="ui-body ui-body-a ui-corner-all">
+		<div style="display: inline-block;">
+			<div style="width:150px; float: left; margin-left: 0px;">
+				<img alt="" src="img/user.svg" style="width:50px; height: 50px; margin: 0px;">
+				<img alt="" src="img/pencil.svg" style="width:20px; height: 20px; margin: 0px;">
+			</div>
+			<div style="width:180px; float:left; margin-left: 0px;">
+				<h2>Create Request</h2>
+			</div>
+		</div>
+	
+		<div style="display: inline-block;">
+			<div style="float: left; width: 180px; margin-right: 5px;">
+				<select name="req_type" id="req_type">
+					<option value="select">--Type of Request--</option>
+					<option value="banking">Banking</option>
+					<option value="education">Education</option>
+					<option value="medical">Medical</option>
+					<option value="counselling">Counseling</option>
+				</select>
+			</div>
+		
+		<div style="display: inline-block;">
+			<div style="width:150px; float: left; margin-right: 5px;">
+				<input name="details" id="details" required="true" data-clear-btn="true" value="" placeholder="Details*" maxlength="20" type="text"/>
+			</div>
+			<div style="width:180px; float: right;">
+				<input name="extra_info" id="extra_info" required="true" data-clear-btn="true" value="" placeholder="Extra Info" maxlength="20" type="text"/>
+			</div>
+		</div>
+			<div style="float: right; width: 150px;">
+				<select name="city" id="city">
+					<option value="select">--City--</option>
+					<option value="mum">Mumbai</option>
+					<option value="ban">Bangalore</option>
+					<option value="pat">Patna</option>
+				</select>
+			</div>
+		</div>
+		
+		<div style="display: inline-block; margin-bottom: 20px; margin-top: 20px;">
+			<div class="ui-input-btn ui-btn ui-corner-all" style="float: left; margin-right: 10px;">
+				Submit
+				<input data-enhanced="true" type="submit" value="Submit" id="submit_registration"/>
+			</div>
+			<div class="ui-input-btn ui-btn ui-corner-all" style="float: right;">
+				Cancel
+				<input data-enhanced="true" type="button" value="Cancel" id="cancel_registration"/>
+			</div>
+		</div>
+		
+		</form>
+		
+	
+	<div data-role="navbar" id="request_footer">
+		<ul>
+			<li align="center">
+				<img alt="" src="img/FAQ.png" style="width: 35px; height: 30px;">
+				<a href="#">FAQs</a>
+			</li>
+			<li align="center">
+				<img alt="" src="img/contact-us.png" style="width: 35px; height: 30px;">
+				<a href="#">Contact us</a>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
