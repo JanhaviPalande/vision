@@ -49,10 +49,15 @@ var app = {
                         	$("#seeker_list").table("refresh");                        	
                        */
                         	//For Manage volunteer
-                        	var html = "<tr><td>"+theItem.firstname+" "+theItem.lastname+"</td>	<td>"+theItem.mobile+"</td><td>"+theItem.state+"</td><td>"+theItem.city+"</td><td>"+theItem.city+"</td></tr>"; 
+                        	/*var html = "<tr><td>"+theItem.firstname+" "+theItem.lastname+"</td>	<td>"+theItem.mobile+"</td><td>"+theItem.state+"</td><td>"+theItem.city+"</td><td>"+theItem.city+"</td></tr>"; 
                         	$("#volunteer_list > tbody").append(html);
                         	$("#volunteer_list").table("refresh");                        	
-                       
+                       */
+                        	
+                        	//For Manage Requests
+                        	var html = "<tr><td>"+theItem.firstname+" "+theItem.lastname+"</td>	<td>"+theItem.mobile+"</td><td>"+theItem.state+"</td><td>"+theItem.city+"</td><td>"+theItem.city+"</td></tr>"; 
+                        	$("#request_list > tbody").append(html);
+                        	$("#request_list").table("refresh");
                         	
                         });
                     },
