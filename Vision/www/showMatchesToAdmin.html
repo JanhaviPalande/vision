@@ -21,22 +21,21 @@
 					<div data-role="page" data-theme="a">
 		
 
-	<div id="registration" class="ui-body ui-body-a ui-corner-all">
+	<div id="MatchesAdmin" class="ui-body ui-body-a ui-corner-all">
 		<div style="display: inline-block;">
 			<div style="float:left; margin-left: 0px;">
 				<h2>Requests and Matches</h2>
 			</div>
 		</div>
-	
+	<!-- 
 		<div data-role="collapsible-set" id="collapsible-set-1">
 			<div data-role="collapsible">
 				<h4>Blood Donation</h4>
 				<p align="left">
-				<!-- Name of Request<br>
+				 Name of Request<br>
 				Description<br>
 				<img alt="Accept" src="img/check.svg" style="width: 25px; height: 25px;" align="left">
 				 <img alt="Reject" src="img/cross.svg" style="width: 25px; height:25px;" align="right">
-				 -->
 					 
 				 </p><br>
 			</div>
@@ -50,6 +49,10 @@
 			</div>
 		</div>
 		
+	</div>-->
+	
+	<div id="collapsibleSetAdmin" data-role="collapsible-set">
+   		<div id="rankingAdmin"></div>
 	</div>
 	<div data-role="navbar" id="login_footer">
 		<ul>
@@ -63,5 +66,7 @@
 			</li>
 		</ul>
 	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/matches.js"></script>
 </body>
 </html>

@@ -42,10 +42,18 @@ var app = {
                         console.log(JSON.stringify(data));
                         $.each(data, function (i, theItem) {
                         	
+                        	
+                        	//For Admin
+                        	var ranking = "<h3>"+theItem.ReqID+"</h3><p><span>Name:"+theItem.ReqID+"</span><br><span>Status:"+theItem.Status+"</span><br><span>Matched Since:"+theItem.TimeOpened+"</span><br><img alt='Accept' src='img/check.svg' style='width: 25px; height: 25px;'><br></p>";
+                        	$('#rankingAdmin').replaceWith('<div id="ranking1" data-role="collapsible" data-collapsed="false">' + ranking + '</div>');
+                        	$('#collapsibleSetAdmin').find('div[data-role=collapsible]').collapsible({refresh:true});
+                        	
+                        	
                         	//For Volunteer
-                        	var ranking = "<h3>"+theItem.ReqID+"</h3><p><span>Name:"+theItem.ReqID+"</span><br><span>Status:"+theItem.Status+"</span><br><span>Matched Since:"+theItem.TimeOpened+"</span><br><img alt='Accept' src='img/check.svg' style='width: 25px; height: 25px;' align='left'><img alt='Reject' src='img/cross.svg' style='width: 25px; height:25px;' align='right'>	<br></p>";
+                        	/*var ranking = "<h3>"+theItem.ReqID+"</h3><p><span>Name:"+theItem.ReqID+"</span><br><span>Status:"+theItem.Status+"</span><br><span>Matched Since:"+theItem.TimeOpened+"</span><br><img alt='Accept' src='img/check.svg' style='width: 25px; height: 25px;' align='left'><img alt='Reject' src='img/cross.svg' style='width: 25px; height:25px;' align='right'>	<br></p>";
                         	$('#rankingVol').replaceWith('<div id="ranking1" data-role="collapsible" data-collapsed="false">' + ranking + '</div>');
                         	$('#collapsibleSetVol').find('div[data-role=collapsible]').collapsible({refresh:true});
+                        	*/
                         	
                         	//For Seeker
                         	/*
