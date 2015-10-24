@@ -115,6 +115,46 @@ var app = {
             event.preventDefault();
             
            });
+        
+        $("#create_request_form" ).submit(function( event ) {
+            alert( "Handler for .submit() called." );
+            
+            /*
+             * From API side please accept mobile number instead of accepting firstname and lastname itself
+             * from UI side please send mobile number in every request as it is primary key for us
+             */
+          
+            /*var details		= document.getElementById("details").value;
+            var extra_info 		= document.getElementById("extra_info").value;
+           // var mobile 			= document.getElementById("mobile").value; // it should be stored in COOKIES
+            var reqDate 	= document.getElementById("req_date").value;
+            var reqType 			= document.getElementById("req_type").value;
+            var city 			= document.getElementById("city").value;
+            
+            var payload = {
+                    "city": city,
+                    "details": details,
+                    "reqType": reqTtype,
+                    "reqDate": reqDate,
+                    "mobile": mobile,
+                    "reqDate":reqDate
+            }
+            console.log(JSON.stringify(payload));
+            */
+            $.ajax({
+                type: "POST",
+                url: "http://vcslx160.samgpunb.symantec.com:8000/api/Req/",
+                async: false,
+                data: JSON.stringify({"req_subject":"paper writing","req_type":"Education","req_status":"Open","req_info":"City diff Pune","firstname":"ABC","lastname":"XYZ"}),
+                //data:JSON.stringify(payload),
+                contentType: "application/json",
+                complete: function (data) {
+                    console.log(JSON.stringify(data));
+                    wait = false;
+            }});
+            event.preventDefault();
+            
+           });
 
 
     }
