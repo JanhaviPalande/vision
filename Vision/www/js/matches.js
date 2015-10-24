@@ -41,10 +41,17 @@ var app = {
                         alert('success');
                         console.log(JSON.stringify(data));
                         $.each(data, function (i, theItem) {
-                        	var ranking = "<h3>"+theItem.ReqID+"</h3><p><span>Name:"+theItem.MatchID+"</span><br><span>Status:"+theItem.Status+"</span><br><span>Matched Since:"+theItem.TimeOpened+"</span><img alt='Accept' src='img/check.svg' style='width: 25px; height: 25px;' align='left'><img alt='Reject' src='img/cross.svg' style='width: 25px; height:25px;' align='right'>	<br></p>";
-                        	// document.getElementById("inpFirstName").value= theItem.login;
+                        	
+                        	//For Volunteer
+                        	var ranking = "<h3>"+theItem.ReqID+"</h3><p><span>Name:"+theItem.ReqID+"</span><br><span>Status:"+theItem.Status+"</span><br><span>Matched Since:"+theItem.TimeOpened+"</span><br><img alt='Accept' src='img/check.svg' style='width: 25px; height: 25px;' align='left'><img alt='Reject' src='img/cross.svg' style='width: 25px; height:25px;' align='right'>	<br></p>";
+                        	$('#rankingVol').replaceWith('<div id="ranking1" data-role="collapsible" data-collapsed="false">' + ranking + '</div>');
+                        	$('#collapsibleSetVol').find('div[data-role=collapsible]').collapsible({refresh:true});
+                        	
+                        	//For Seeker
+                        	/*
+                        	var ranking = "<h3>"+theItem.ReqID+"</h3><p><span>Name:"+theItem.ReqID+"</span><br><span>Status:"+theItem.Status+"</span><br><span>Matched Since:"+theItem.TimeOpened+"</span><img alt='Accept' src='img/check.svg' style='width: 25px; height: 25px;' align='left'><img alt='Reject' src='img/cross.svg' style='width: 25px; height:25px;' align='right'>	<br></p>";
                         	$('#ranking1').replaceWith('<div id="ranking1" data-role="collapsible" data-collapsed="false">' + ranking + '</div>');
-                        	$('#collapsibleSet').find('div[data-role=collapsible]').collapsible({refresh:true});
+                        	$('#collapsibleSet').find('div[data-role=collapsible]').collapsible({refresh:true});*/
                         });
                     },
                     error: function (msg, url, line) {
@@ -53,7 +60,8 @@ var app = {
                     
                 });
          }
-   
+
+    
 };
 
 app.initialize();
