@@ -1,139 +1,406 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-    <link rel="stylesheet" href="css/themes/vision_theme.min.css" />
-        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Antardrishti-Registration</title>
-    </head>
-<body style="text-transform: capitalize;">
-		 <div class="app">
-              <form method="post" id="register_form">
-                
-					<div data-role="page" data-theme="a">
-		
+ 
 
-	<div id="registration" class="ui-body ui-body-a ui-corner-all">
-		<div style="display: inline-block;">
-			<div style="width:150px; float: left; margin-left: 0px;">
-				<img alt="" src="img/user.svg" style="width:50px; height: 50px; margin: 0px;">
-				<img alt="" src="img/pencil.svg" style="width:20px; height: 20px; margin: 0px;">
-			</div>
-			<div style="width:180px; float:left; margin-left: 0px;">
-				<h2>Register</h2>
-			</div>
-		</div>
-	
-		<div style="display: inline-block;">
-			<div style="width:150px; float: left; margin-right: 5px;">
-				<input name="first_name" id="first_name" required="true" data-clear-btn="true" value="" placeholder="First name*" maxlength="20" type="text"/>
-			</div>
-			<div style="width:180px; float: right;">
-				<input name="last_name" id="last_name" required="true" data-clear-btn="true" value="" placeholder="Last name*" maxlength="20" type="text"/>
-			</div>
-		</div>
-		
-		<div style="display: inline-block;">
-			<div style="width:150px; float: left; margin-right: 5px;">
-				<input name="password" id="password" required="true" data-clear-btn="true" value="" placeholder="Password*" maxlength="20" type="password"/>
-			</div>
-			<div style="width:180px; float: right;">
-				<input name="reenter_password" id="reenter_password" required="true" data-clear-btn="true" value="" placeholder="Retype password*" maxlength="20" type="password"/>
-			</div>
-		</div>
-		
-		<div style="display: inline-block;">
-			<div style="width:120px; float: left; margin-left: 0px;">
-				<input type="radio" name="gender" id="gender">Male
-			</div>
-			<div style="width:120px; float: right; margin-left: 0px;">
-				<input type="radio" name="gender" id="gender">Female
-			</div>
-		</div>
-		
-		<div style="display: inline-block;">
-			<div style="float: left; width: 170px; margin-right: 5px; margin-left: 0px;">
-				<input name="dob" id="dob" data-clear-btn="true" value="" placeholder="Date of Birth*" min="10" max="10" maxlength="10" required="true" type="date"/>
-			</div>
-			<div style="float: right; width: 150px;">
-				<input name="mobile" id="mobile" data-clear-btn="true" value="" placeholder="Mobile*" required="true" type="number"/>
-			</div>
-		</div>
-		
-		<div style="float: left; margin-left: 20px; margin-right: 10px;">
-			<div style="float: left; width: 200px;">
-				<input name="email" id="email" data-clear-btn="true" value="" placeholder="Email address" type="email"/>
-			</div>
-			<div style="display: inline-block; width: 120px;">
-				<input name="email" id="occupation" data-clear-btn="true" value="" placeholder="Occupation" type="text"/>
-			</div>
-		</div>
-		
-		<div style="display: inline-block;">
-			<div style="float: left; width: 180px; margin-right: 5px;">
-				<select name="state" id="state">
-					<option value="select">--State--</option>
-					<option value="mah">Maharashtra</option>
-					<option value="kar">Karnataka</option>
-					<option value="bih">Bihar</option>
-				</select>
-			</div>
-			<div style="float: right; width: 150px;">
-				<select name="state" id="state">
-					<option value="select">--City--</option>
-					<option value="mum">Mumbai</option>
-					<option value="ban">Bangalore</option>
-					<option value="pat">Patna</option>
-				</select>
-			</div>
-		</div>
-		
-		<div style="display: inline-block;">
-			<div style="width:120px; float: left; margin-right: 5px;">
-				<div>
-					<input name="pincode" id="pincode" data-clear-btn="true" value="" placeholder="Pincode" min="6" max="6" maxlength="6" type="number"/>
-				</div>
-			</div>
-			<div style="width:200px; float: right;">
-					<textarea name="address" id="address" data-clear-btn="true" placeholder="Address" maxlength="255" cols="40" rows="8"></textarea>
-			</div>
-		</div>
-		
-		<div style="display: inline-block; margin-bottom: 20px; margin-top: 20px;">
-			<div class="ui-input-btn ui-btn ui-corner-all" style="float: left; margin-right: 10px;">
-				Submit
-				<input data-enhanced="true" type="submit" value="Submit" id="submit_registration"/>
-			</div>
-			<div class="ui-input-btn ui-btn ui-corner-all" style="float: right;">
-				Cancel
-				<input data-enhanced="true" type="button" value="Cancel" id="cancel_registration"/>
-			</div>
-		</div>
-		
-		</form>
-		
-	</div>
-	<div data-role="navbar" id="login_footer">
-		<ul>
-			<li align="center">
-				<img alt="" src="img/FAQ.png" style="width: 35px; height: 30px;">
-				<a href="#">FAQs</a>
-			</li>
-			<li align="center">
-				<img alt="" src="img/contact-us.png" style="width: 35px; height: 30px;">
-				<a href="#">Contact us</a>
-			</li>
-		</ul>
-	</div>
-	<script type="text/javascript" src="cordova.js"></script>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="css/themes/vision_theme.min.css" />
+
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <meta charset="utf-8" />
+
+        <meta name="format-detection" content="telephone=no" />
+
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <title>Antardrishti-Registration</title>
+
+    </head>
+
+<body style="text-transform: capitalize;">
+
+             <div class="app">
+
+              <form method="post" id="register_form">
+
+               
+
+                                 <div data-role="page" data-theme="a">
+
+            
+
+ 
+
+       <div id="registration" class="ui-body ui-body-a ui-corner-all">
+
+             <div style="display: inline-block;">
+
+                    <div style="width:150px; float: left; margin-left: 0px;">
+
+                           <img alt="" src="img/user.svg" style="width:50px; height: 50px; margin: 0px;">
+
+                           <img alt="" src="img/pencil.svg" style="width:20px; height: 20px; margin: 0px;">
+
+                    </div>
+
+                    <div style="width:180px; float:left; margin-left: 0px;">
+
+                           <h2>Register</h2>
+
+                    </div>
+
+             </div>
+
+      
+
+             <div style="display: inline-block;">
+
+                    <div style="width:150px; float: left; margin-right: 5px;">
+
+                           <input name="first_name" id="first_name" required="true" data-clear-btn="true" value="" placeholder="First name*" maxlength="20" type="text"/>
+
+                    </div>
+
+                    <div style="width:180px; float: right;">
+
+                           <input name="last_name" id="last_name" required="true" data-clear-btn="true" value="" placeholder="Last name*" maxlength="20" type="text"/>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block;">
+
+                    <div style="width:150px; float: left; margin-right: 5px;">
+
+                           <input name="password" id="password" required="true" data-clear-btn="true" value="" placeholder="Password*" maxlength="20" type="password"/>
+
+                    </div>
+
+                    <div style="width:180px; float: right;">
+
+                           <input name="reenter_password" id="reenter_password" required="true" data-clear-btn="true" value="" placeholder="Retype password*" maxlength="20" type="password"/>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block;">
+
+                    <div style="width:120px; float: left; margin-left: 0px;">
+
+                           <input type="radio" value="m" name="gender" id="gender">Male
+
+                    </div>
+
+                    <div style="width:120px; float: right; margin-left: 0px;">
+
+                           <input type="radio" value="f" name="gender" id="gender">Female
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block;">
+
+                    <div style="float: left; width: 170px; margin-right: 5px; margin-left: 0px;">
+
+                           <input name="dob" id="dob" data-clear-btn="true" value="" placeholder="Date of Birth*" min="10" max="10" maxlength="10" required="true" type="date"/>
+
+                    </div>
+
+                    <div style="float: right; width: 150px;">
+
+                           <input name="mobile" id="mobile" data-clear-btn="true" value="" placeholder="Mobile*" required="true" type="number"/>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="float: left; margin-left: 20px; margin-right: 10px;">
+
+                    <div style="float: left; width: 200px;">
+
+                           <input name="email" id="email" data-clear-btn="true" value="" placeholder="Email address" type="email"/>
+
+                    </div>
+
+                    <div style="display: inline-block; width: 120px;">
+
+                           <input name="email" id="occupation" data-clear-btn="true" value="" placeholder="Occupation" type="text"/>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block;">
+
+                    <div style="float: left; width: 180px; margin-right: 5px;">
+
+                           <select name="state" id="state">
+
+                                 <option value="select">State</option>
+
+                                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+
+                                 <option value="Andhra Pradesh">Andhra Pradesh</option>
+
+                                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+
+                                 <option value="Assam">Assam</option>
+
+                                 <option value="Bihar">Bihar</option>
+
+                                 <option value="Chandigarh">Chandigarh</option>
+
+                                 <option value="Chhattisgarh">Chhattisgarh</option>
+
+                                 <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+
+                                 <option value="Daman and Diu">Daman and Diu</option>
+
+                                 <option value="Delhi">Delhi</option>
+
+                                 <option value="Goa">Goa</option>
+
+                                 <option value="Gujarat">Gujarat</option>
+
+                                 <option value="Haryana">Haryana</option>
+
+                                 <option value="Himachal Pradesh">Himachal Pradesh</option>
+
+                                 <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+
+                                 <option value="Jharkhand">Jharkhand</option>
+
+                                 <option value="Karnataka">Karnataka</option>
+
+                                 <option value="Kerala">Kerala</option>
+
+                                 <option value="Lakshadweep">Lakshadweep</option>
+
+                                 <option value="Madhya Pradesh">Madhya Pradesh</option>
+
+                                 <option value="Maharashtra">Maharashtra</option>
+
+                                 <option value="Manipur">Manipur</option>
+
+                                 <option value="Meghalaya">Meghalaya</option>
+
+                                 <option value="Mizoram">Mizoram</option>
+
+                                 <option value="Nagaland">Nagaland</option>
+
+                                 <option value="Orissa">Orissa</option>
+
+                                 <option value="Pondicherry">Pondicherry</option>
+
+                                 <option value="Punjab">Punjab</option>
+
+                                 <option value="Rajasthan">Rajasthan</option>
+
+                                 <option value="Sikkim">Sikkim</option>
+
+                                 <option value="Tamil Nadu">Tamil Nadu</option>
+
+                                 <option value="Tripura">Tripura</option>
+
+                                 <option value="Uttaranchal">Uttaranchal</option>
+
+                                 <option value="Uttar Pradesh">Uttar Pradesh</option>
+
+                                 <option value="West Bengal">West Bengal</option>
+
+                           </select>
+
+                    </div>
+
+                    <div style="float: right; width: 150px;">
+
+                           <div class="ui-field-contain">
+
+                                 <label for="city"></label>
+
+                                 <input name="city" id="city" data-clear-btn="true" value="" placeholder="City" maxlength="25" type="text"/>
+
+                           </div>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block;">
+
+                    <div style="width:120px; float: left; margin-right: 5px;">
+
+                           <div>
+
+                                 <input name="pincode" id="pincode" data-clear-btn="true" value="" placeholder="Pincode" min="6" max="6" maxlength="6" type="number"/>
+
+                           </div>
+
+                    </div>
+
+                    <div style="width:200px; float: right;">
+
+                                 <textarea name="address" id="address" data-clear-btn="true" placeholder="Address" maxlength="255" cols="40" rows="8"></textarea>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block; margin-bottom: 20px; margin-top: 20px;">
+
+                    <div style="float: left; width: 200px;">
+
+                           <select name="sec_ques1" id="sec_ques1">
+
+                                 <option value="select">Security question1</option>
+
+                                 <option value="q1">What is your mother's maiden name?</option>
+
+                                 <option value="q2">How many languages do you know?</option>
+
+                                 <option value="q3">Which city/town were you born in?</option>
+
+                           </select>
+
+                    </div>
+
+                    <div style="float: right; width: 150px;">
+
+                           <div class="ui-field-contain">
+
+                                 <label for="sec_ans1"></label>
+
+                                 <input name="sec_ans1" id="sec_ans1" data-clear-btn="true" value="" placeholder="Answer" maxlength="20" type="text"/>
+
+                           </div>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block; margin-bottom: 20px; margin-top: 20px;">
+
+                    <div style="float: left; width: 200px;">
+
+                           <select name="sec_ques2" id="sec_ques2">
+
+                                 <option value="select">Security question2</option>
+
+                                 <option value="q4">What is your best friend's name?</option>
+
+                                 <option value="q5">what is your pet's name?</option>
+
+                                 <option value="q6">In which city/town did you attend your high school?</option>
+
+                           </select>
+
+                    </div>
+
+                    <div style="float: right; width: 150px;">
+
+                           <div class="ui-field-contain">
+
+                                 <label for="sec_ans2"></label>
+
+                                 <input name="sec_ans2" id="sec_ans2" data-clear-btn="true" value="" placeholder="Answer" maxlength="20" type="text"/>
+
+                           </div>
+
+                    </div>
+
+             </div>
+
+            
+
+             <div style="display: inline-block; margin-bottom: 20px; margin-top: 20px;">
+
+                    <div class="ui-input-btn ui-btn ui-corner-all" style="float: left; margin-right: 10px;">
+
+                           Submit
+
+                           <input data-enhanced="true" type="submit" value="Submit" id="submit_registration"/>
+
+                    </div>
+
+                    <div class="ui-input-btn ui-btn ui-corner-all" style="float: right;">
+
+                           Cancel
+
+                           <input data-enhanced="true" type="button" value="Cancel" id="cancel_registration"/>
+
+                    </div>
+
+             </div>
+
+            
+
+             </form>
+
+            
+
+       </div>
+
+       <div data-role="navbar" id="login_footer">
+
+             <ul>
+
+                    <li align="center">
+
+                           <img alt="" src="img/FAQ.png" style="width: 35px; height: 30px;">
+
+                           <a href="#">FAQs</a>
+
+                    </li>
+
+                    <li align="center">
+
+                           <img alt="" src="img/contact-us.png" style="width: 35px; height: 30px;">
+
+                           <a href="#">Contact us</a>
+
+                    </li>
+
+             </ul>
+
+       </div>
+
+       <script type="text/javascript" src="cordova.js"></script>
+
     <script type="text/javascript" src="js/index.js"></script>
+
 </body>
+
 </html>
+
