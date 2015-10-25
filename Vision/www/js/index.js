@@ -1,10 +1,9 @@
-
 var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
     },
-    
+   
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
@@ -19,14 +18,14 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-
-    
+ 
+   
     // Update DOM on a Received Event
     receivedEvent: function(id) {
       /*  var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
-
+ 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 */
@@ -37,25 +36,25 @@ var app = {
                     url: 'http://vcslx160.samgpunb.symantec.com:8000/api/login/',
                     dataType: "json",
                     success: function (data) {
-
+ 
                         alert('success');
                         console.log(JSON.stringify(data));
                         $.each(data, function (i, theItem) {
-                        	 document.getElementById("inpFirstName").value= theItem.login;
+                            document.getElementById("inpFirstName").value= theItem.login;
                         });
                     },
                     error: function (msg, url, line) {
-                        console.log('msg = ' + msg + ', url = ' + url + ', line = ' + line);
+                       console.log('msg = ' + msg + ', url = ' + url + ', line = ' + line);
                     }
-                    
+                   
                 });
-        
+       
         $("#target" ).submit(function( event ) {
-      	  alert( "Handler for .submit() called." );
-      	  var firstName = document.getElementById("inpFirstName").value;
-      	  var lastName = document.getElementById("inpLastName").value;
-       	  
-      	 $.ajax({
+        alert( "Handler for .submit() called." );
+        var firstName = document.getElementById("inpFirstName").value;
+        var lastName = document.getElementById("inpLastName").value;
+               
+        $.ajax({
              type: "POST",
              url: "http://vcslx160.samgpunb.symantec.com:8000/api/login",
              async: false,
@@ -65,27 +64,31 @@ var app = {
              console.log(data);
              wait = false;
          }});
-      	  event.preventDefault();
-      	  
-      	});
+        event.preventDefault();
         
+       });
+       
         $("#register_form" ).submit(function( event ) {
             alert( "Handler for .submit() called." );
-            
-            var firstName		= document.getElementById("first_name").value;
-            var lastName 		= document.getElementById("last_name").value;
-            var password 		= document.getElementById("password").value;
+           
+            var firstName        = document.getElementById("first_name").value;
+            var lastName         = document.getElementById("last_name").value;
+            var password         = document.getElementById("password").value;
             var reenterPassword = document.getElementById("reenter_password").value;
-            var gender			= document.getElementById("gender").value;
-            var dateOfBirth 	= document.getElementById("dob").value;
-            var mobile 			= document.getElementById("mobile").value;
-            var email 			= document.getElementById("email").value;
-            var occupation 		= document.getElementById("occupation").value;
-            var state 			= document.getElementById("state").value;
-            var city 			= document.getElementById("city").value;
-            var pincode 		= document.getElementById("pincode").value;
-            var address 		= document.getElementById("address").value;
-            
+            var gender                  = document.getElementById("gender").value;
+            var dateOfBirth      = document.getElementById("dob").value;
+            var mobile                  = document.getElementById("mobile").value;
+            var email                   = document.getElementById("email").value;
+            var occupation              = document.getElementById("occupation").value;
+            var state                   = document.getElementById("state").value;
+            var city                    = document.getElementById("city").value;
+            var pincode          = document.getElementById("pincode").value;
+            var address          = document.getElementById("address").value;
+            var secQue1                 = document.getElementById("sec_ques1").value;
+            var secQue2                 = document.getElementById("sec_ques2").value;
+            var ans1                    = document.getElementById("sec_ans1").value;
+            var ans2                    = document.getElementById("sec_ans2").value;
+           
             var payload = {
                     "address": address,
                     "pincode": pincode,
@@ -93,19 +96,25 @@ var app = {
                     "state": state,
                     "email": email,
                     "mobile": mobile,
-                    "dob": dateOfBirth,
+                    "dob": "12/10/1988",
                     "gender": gender,
                     "lastname": lastName,
-                    "firstname": firstName
-            }
+                    "firstname": firstName,
+                    "secQue1": secQue1,
+                    "secQue2": secQue2,
+                    "secAns1": ans1,
+                    "secAns2": ans2,
+                    "registerType": "VolunteerInterest"
+            };
+           
             console.log("registration payload");
             console.log(JSON.stringify(payload));
-            
+           
             $.ajax({
                 type: "POST",
                 url: "http://vcslx160.samgpunb.symantec.com:8000/api/register/",
                 async: false,
-                data: JSON.stringify({"address":"3","pincode":"2","city":"mum","state":"mah","email":"d","mobile":"34","dob":"03/09/1990","gender":"on","lastname":"Futane","firstname":"Deepali"}),
+                data: JSON.stringify(payload),
                 //data:JSON.stringify(payload),
                 contentType: "application/json",
                 complete: function (data) {
@@ -113,24 +122,24 @@ var app = {
                     wait = false;
             }});
             event.preventDefault();
-            
+           
            });
-        
+       
         $("#create_request_form" ).submit(function( event ) {
             alert( "Handler for .submit() called." );
-            
+           
             /*
              * From API side please accept mobile number instead of accepting firstname and lastname itself
              * from UI side please send mobile number in every request as it is primary key for us
              */
-          
-            /*var details		= document.getElementById("details").value;
-            var extra_info 		= document.getElementById("extra_info").value;
-           // var mobile 			= document.getElementById("mobile").value; // it should be stored in COOKIES
-            var reqDate 	= document.getElementById("req_date").value;
-            var reqType 			= document.getElementById("req_type").value;
-            var city 			= document.getElementById("city").value;
-            
+         
+            /*var details        = document.getElementById("details").value;
+            var extra_info              = document.getElementById("extra_info").value;
+           // var mobile                = document.getElementById("mobile").value; // it should be stored in COOKIES
+            var reqDate    = document.getElementById("req_date").value;
+            var reqType                 = document.getElementById("req_type").value;
+            var city                    = document.getElementById("city").value;
+           
             var payload = {
                     "city": city,
                     "details": details,
@@ -153,12 +162,13 @@ var app = {
                     wait = false;
             }});
             event.preventDefault();
-            
+           
            });
-
-
+ 
+ 
     }
-   
+  
 };
-
+ 
 app.initialize();
+ 
