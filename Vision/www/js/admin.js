@@ -66,6 +66,58 @@ var app = {
                     }
                     
                 });
+        
+        
+        $("#add_volunteer_admin_form" ).submit(function( event ) {
+            alert( "Handler for .submit() called." );
+            
+            var firstName		= document.getElementById("first_name").value;
+            var lastName 		= document.getElementById("last_name").value;
+            var password 		= document.getElementById("password").value;
+            var reenterPassword = document.getElementById("reenter_password").value;
+            var gender			= document.getElementById("gender").value;
+            var dateOfBirth 	= document.getElementById("dob").value;
+            var mobile 			= document.getElementById("mobile").value;
+            var email 			= document.getElementById("email").value;
+            var occupation 		= document.getElementById("occupation").value;
+            var state 			= document.getElementById("state").value;
+            var city 			= document.getElementById("city").value;
+            var pincode 		= document.getElementById("pincode").value;
+            var address 		= document.getElementById("address").value;
+            var pref 		= document.getElementById("pref").value;
+            
+            var payload = {
+                    "address": address,
+                    "pincode": pincode,
+                    "city": city,
+                    "state": state,
+                    "email": email,
+                    "mobile": mobile,
+                    "dob": dateOfBirth,
+                    "gender": gender,
+                    "lastname": lastName,
+                    "firstname": firstName,
+                    "pref":	pref
+            }
+            console.log("Add Volunteer payload");
+            console.log(JSON.stringify(payload));
+            
+            $.ajax({
+                type: "POST",
+                url: "http://vcslx160.samgpunb.symantec.com:8000/api/add_volunteer_admin/",
+                async: false,
+                data: JSON.stringify({"address":"3","pincode":"2","city":"mum","state":"mah","email":"d","mobile":"34","dob":"03/09/1990","gender":"on","lastname":"Futane","firstname":"Deepali" ,"pref":"Banking"}),
+                //data:JSON.stringify(payload),
+                contentType: "application/json",
+                complete: function (data) {
+                    console.log(JSON.stringify(data));
+                    wait = false;
+            }});
+            event.preventDefault();
+            
+           });
+        
+        
          }
 
     
