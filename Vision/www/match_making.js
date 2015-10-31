@@ -18,9 +18,6 @@ for(var i=0; i < requests.count(); i++){
 	 db.volunteerOffering.find({"Skills":new RegExp('.*' + reqType+'*.'),"City":new RegExp('.*' + ReqCity+'*.')})
 	 }*/
 
-	 
-	 
-	 
 	 var request = db.request.find()
 	 for(var i =0; i< 1; i++){
 	 print("Processing");

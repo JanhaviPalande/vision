@@ -32,7 +32,11 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 */
         console.log('Received Event: ' + id);
-        $.ajax(
+        
+        //For Managing Reuqests for Seeker
+        /* 
+         * 
+         $.ajax(
                 {
                     type: "GET",
                     url: 'http://vcslx160.samgpunb.symantec.com:8000/api/Req/',
@@ -53,7 +57,30 @@ var app = {
                         console.log('msg = ' + msg + ', url = ' + url + ', line = ' + line);
                     }
                     
+                });*/
+        $.ajax(
+                {
+                    type: "GET",
+                    url: 'http://vcslx160.samgpunb.symantec.com:8000/api/register/',
+                    dataType: "json",
+                    success: function (data) {
+
+                        alert('success');
+                        console.log(JSON.stringify(data));
+                        $.each(data, function (i, theItem) {
+                        	document.getElementById('first_name').value = theItem.firstname;
+                        	document.getElementById('last_name').value = theItem.lastname;
+                        	document.getElementById('password').value = theItem.password;
+                        	document.getElementById('reenter_password').value = theItem.lastname;
+                        	document.getElementById('gender').value = theItem.gender;
+                        });
+                    },
+                    error: function (msg, url, line) {
+                        console.log('msg = ' + msg + ', url = ' + url + ', line = ' + line);
+                    }
+                    
                 });
+
          }
 
     

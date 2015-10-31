@@ -45,7 +45,10 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);*/
-     /*   $.ajax(
+    	
+    	var username = document.getElementById('user_name').value;
+    	var passwd = document.getElementById('passwd').value;
+       $.ajax(
                 {
                     type: "GET",
                     url: 'http://vcslx160.samgpunb.symantec.com:8000/api/login/',
@@ -55,7 +58,7 @@ var app = {
                         alert('success');
                         console.log(JSON.stringify(data));
                         $.each(data, function (i, theItem) {
-     
+                        			console.log(theItem);
                         });
                     },
                     error: function (msg, url, line) {
@@ -65,7 +68,7 @@ var app = {
                     }
                     
                 });
-                */
+                
     }
 };
 
